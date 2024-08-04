@@ -1,4 +1,7 @@
 {
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+  };
   outputs = { nixpkgs, ... }: {
     packages = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all (system: let
       pkgs = import nixpkgs { inherit system; };
